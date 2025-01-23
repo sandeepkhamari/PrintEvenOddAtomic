@@ -1,0 +1,3 @@
+C:/Users/admin/PrintEvenOddAtomic/build/CMakeFiles/PrintEvenOdd.dir
+C:/Users/admin/PrintEvenOddAtomic/build/CMakeFiles/edit_cache.dir
+C:/Users/admin/PrintEvenOddAtomic/build/CMakeFiles/rebuild_cache.dir
