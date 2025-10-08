@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'rm -r build'
+                bat 'if EXISTS build rmdir \s \q build'
                 bat 'mkdir build'
                 bat 'cd build'
                 bat 'cmake -S.. -B.'
