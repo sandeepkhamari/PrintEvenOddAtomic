@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Building...'
             bat '''
-                if EXIST build rmdir /s /q build'
+                if EXIST build rmdir /s /q build
                 mkdir build
                 cd build
                 cmake -S.. -B.
