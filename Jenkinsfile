@@ -7,23 +7,32 @@ pipeline {
             bat '''
                 call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
 
-                if EXIST build rmdir /s /q build
-                mkdir build
-                cd build
+                echo "============== Checking tools ========================"
 
-                "C:\\Program Files\\CMake\\bin\\cmake.exe" -G "NMake Makefiles" -S.. -B.
-                "C:\\Program Files\\CMake\\bin\\cmake.exe" --build .
+                where nmake
+
+                where cl
+
+                //if EXIST build rmdir /s /q build
+                //mkdir build
+
+                //"C:\\Program Files\\CMake\\bin\\cmake.exe" -G "NMake Makefiles" -S. -B.
+                
+                //cd build
+
+                //"C:\\Program Files\\CMake\\bin\\cmake.exe" --build .
 
                 '''
             }
         }
         stage('Run Executable'){ 
            steps{
-
-            bat '''
+            echo 'Running the executable...'
+            /*bat '''
+                call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
                 cd build
                 PrintEvenOdd.exe
-            '''
+            '''*/
            }
         }
         stage('Test') {
