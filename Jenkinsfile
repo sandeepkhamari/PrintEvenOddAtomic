@@ -4,11 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'if EXIST build rmdir /s /q build'
-                bat 'mkdir build'
-                bat 'cd build'
-                bat 'cmake -S.. -B.'
-                bat 'cmake --build .'
+            bat '''
+                if EXIST build rmdir /s /q build'
+                mkdir build
+                cd build
+                cmake -S.. -B.
+                cmake --build .
+                '''
             }
         }
         stage('Test') {
