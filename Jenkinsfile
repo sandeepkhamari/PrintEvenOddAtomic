@@ -10,6 +10,7 @@ pipeline {
                 cd build
                 cmake -S.. -B.
                 cmake --build .
+                ./PrintEvenOdd.exe
                 '''
             }
         }
