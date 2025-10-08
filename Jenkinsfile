@@ -7,12 +7,15 @@ pipeline {
             bat '''
                 call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
 
-                echo "============== Checking tools ========================"
+                if EXIST build rmdir /s /q build
 
-                where nmake
+                mkdir build 
 
-                where cl
+                cd build
 
+                "C:\\Program Files\\CMake\\bin\\cmake.exe" -G "NMake Makefiles" -S.. -B.
+
+                "C:\\Program Files\\CMake\\bin\\cmake.exe" --build .
                 '''
             }
         }
