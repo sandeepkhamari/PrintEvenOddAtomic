@@ -46,7 +46,7 @@ void print_odd()
 
 int main()
 {
-        //std::cout<<"Jenkins_test::PrintEvenOdd implemented with atomics"<<std::endl;
+        std::cout<<"Jenkins_test::PrintEvenOdd implemented with atomics"<<std::endl;
 	std::thread th1(print_odd);
 	std::thread th2(print_even);
 
