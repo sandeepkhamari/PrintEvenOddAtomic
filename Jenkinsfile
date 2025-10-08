@@ -8,9 +8,9 @@ pipeline {
                 if EXIST build rmdir /s /q build
                 mkdir build
                 cd build
-                cmake -S.. -B.
-                cmake --build .
-                ./PrintEvenOdd.exe
+                "C:\\Program Files\\CMake\\bin\\cmake.exe" -S.. -B.
+                "C:\\Program Files\\CMake\\bin\\cmake.exe" --build .
+                PrintEvenOdd.exe
                 '''
             }
         }
