@@ -18,10 +18,13 @@ pipeline {
             }
         }
         stage('Run Executable'){ 
+           steps{
+
             bat '''
                 cd build
                 PrintEvenOdd.exe
             '''
+           }
         }
         stage('Test') {
             steps {
