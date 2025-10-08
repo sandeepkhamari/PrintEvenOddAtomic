@@ -22,6 +22,11 @@ pipeline {
         stage('Run Executable'){ 
            steps{
             echo 'Running the executable...'
+            bat '''
+-                call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
+-                cd build
+-                PrintEvenOdd.exe
+-            '''
            }
         }
         stage('Test') {
