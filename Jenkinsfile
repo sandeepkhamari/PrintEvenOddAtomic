@@ -4,10 +4,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                mkdir build
-                cd build
-                cmake -S.. -B.
-                cmake --build .
+                sh 'mkdir build'
+                sh 'cd build'
+                sh 'cmake -S.. -B.'
+                sh 'cmake --build .'
             }
         }
         stage('Test') {
