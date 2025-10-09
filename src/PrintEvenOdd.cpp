@@ -14,7 +14,7 @@ void print_even()
 		{
 			if(count%2==0)
 			{
-			    std::cout<<"Even: "<<count<<std::endl;
+			    std::cout<<"Even: "<<"ThreadId: "<<std::this_thread::get_id()<<" prints: "<<count<<std::endl;
 			    count++;
 			}
 		}
@@ -33,7 +33,7 @@ void print_odd()
 		{
 			if(count%2==1)
 			{
-				std::cout<<"Odd: "<<count<<std::endl;
+				std::cout<<"Odd: "<<"ThreadId: "<<std::this_thread::get_id()<<" prints: "<<count<<std::endl;
 			    count++;
 			}
 		}
